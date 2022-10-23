@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+body{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #3a4764;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid red;
+    width: 100%;
+}
+.theme{
+    display: flex;
+}
+.screen{
+    display: flex;
+    width: 90%;
+}
