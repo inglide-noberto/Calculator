@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/assets/css/style.css" rel="stylesheet" >
+    <link href="/assets/css/style.css" rel="stylesheet">
     <title>Calculator</title>
 </head>
+
 <body>
     <header class="header">
         <h1>calc</h1>
         <div class="theme">
             <span>THEME</span>
             <div class="theme-choice">
-                <input type="radio">
-                <input type="radio">
-                <input type="radio">
+                <label for="theme"></label>
+                <input type="radio" name="theme">
+                <label for="theme"></label>
+                <input type="radio" name="theme">
+                <label for="theme"></label>
+                <input type="radio" name="theme">
             </div>
         </div>
     </header>
     <div class="screen">
-        <h2></h2>
+        <h2>VALOR</h2>
     </div>
     <div class="container">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>DEL</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>+</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>-</button>
-        <button>.</button>
-        <button>0</button>
-        <button>/</button>
-        <button>x</button>
-        <button>RESET</button>
-        <button>=</button>
+        <div class="selector">
+            <button class="button buttons-number">7</button>
+            <button class="button buttons-number">8</button>
+            <button class="button buttons-number">9</button>
+            <button class="button-del">DEL</button>
+        </div>
+        <div class="selector">
+            <button class="button buttons-number">4</button>
+            <button class="button buttons-number">5</button>
+            <button class="button buttons-number">6</button>
+            <button class="button button-sum">+</button>
+        </div>
+        <div class="selector">
+            <button class="button buttons-number">1</button>
+            <button class="button buttons-number">2</button>
+            <button class="button buttons-number">3</button>
+            <button class="button button-subtraction">-</button>
+        </div>
+        <div class="selector">
+            <button class="button buttons-point">.</button>
+            <button class="button buttons-number">0</button>
+            <button class="button button-division">/</button>
+            <button class="button button-multiplication">x</button>
+        </div>
+        <div class="selector">
+            <button class="button-reset">RESET</button>
+            <button class="buttons-equal">=</button>
+        </div>
     </div>
     <script src="/assets/js/app.js"></script>
 </body>
+
 </html>
