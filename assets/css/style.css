@@ -23,14 +23,19 @@ body{
 .theme{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 50%;
+    align-items: flex-end;
+    width: 40%;
 }
 .theme-choice{
     display: flex;
     justify-content: space-evenly;
-    width: 50%;
+    width: 40%;
     height: 5vh;
+}
+.theme-radio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .screen{
     display: flex;
@@ -57,19 +62,58 @@ body{
     border-radius: 5%;
     height: 60vh;
 }
+.container-buttons{
+    display: flex;
+    width: 90%;
+    align-self: center;
+    height: 50vh;
+    justify-content: space-between;
+    flex-direction: column;
+}
 .button{
     display: flex;
     color: #444b5a;
-    width: 15%;
+    width: 20%;
     justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border-radius: 10%;
+    font-weight: bold;
+    box-shadow: 0 10px #637097;
+}
+.button-reset, .button-del{
+    display: flex;
+    color: #ffffff;
+    background: #637097;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    border-radius: 10%;
+    font-weight: bold;
+}
+.button-del{
+    width: 20%;
+    box-shadow: 0 10px #404e72;
+}
+.button-reset{
+    width: 45%;
+    box-shadow: 0 10px #404e72;
+    
+}
+.buttons-equal{
+    background: #d03f2f;
+    width: 40%;
     align-items: center;
     font-size: 2.5rem;
     border-radius: 5%;
     font-weight: bold;
+    border-radius: 10%;
+    box-shadow: 0 10px #93261a;
 }
 .selector{
     display: flex;
     justify-content: space-around;
+    align-self: center;
     width: 100%;
     height: 8vh;
 }
