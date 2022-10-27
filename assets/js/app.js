@@ -1,40 +1,55 @@
 const selector = document.querySelectorAll('.selector');
 const screen = document.querySelector('.screen-value');
 
-const btnOperations = [];
-const btnNumbers = [];
-// Alterei as variáveis para arrays pois seria melhor de manusear devido a quantidade de botoes 
-btnNumbers.push(document.getElementById('0').textContent);
-btnNumbers.push(document.getElementById('1').textContent);
-btnNumbers.push(document.getElementById('2').textContent);
-btnNumbers.push(document.getElementById('3').textContent);
-btnNumbers.push(document.getElementById('4').textContent);
-btnNumbers.push(document.getElementById('5').textContent);
-btnNumbers.push(document.getElementById('6').textContent);
-btnNumbers.push(document.getElementById('7').textContent);
-btnNumbers.push(document.getElementById('8').textContent);
-btnNumbers.push(document.getElementById('9').textContent);
-
-btnOperations.push(document.getElementById('point').textContent);
-btnOperations.push(document.getElementById('sum').textContent);
-btnOperations.push(document.getElementById('subtraction').textContent);
-btnOperations.push(document.getElementById('multiplication').textContent);
-btnOperations.push(document.getElementById('division').textContent);
-btnOperations.push(document.getElementById('del').textContent);
-btnOperations.push(document.querySelector('.button-reset').textContent);
-btnOperations.push(document.querySelector('.buttons-equal').textContent);
-
-console.log(btnNumbers);
-console.log(btnOperations);
-
-selector.forEach(element =>{
-    element.addEventListener('click', (e)=>{
-        if (e.target.matches('button')) {
+selector.forEach(element => {
+    element.addEventListener('click', (e) => {
+        const buttonValue = e.target;
+        const action = buttonValue.dataset.operation;
+        if (buttonValue.matches('button') && !action) {
             if (screen.textContent === '0') {
-                screen.textContent = e.target.textContent;
-            }else{
-                screen.textContent = screen.textContent + e.target.textContent;
+                screen.textContent = buttonValue.textContent;
+            } else {
+                screen.textContent = screen.textContent + buttonValue.textContent;
+            }
+        } else if (
+            action === 'sum' ||
+            action === 'subtraction' ||
+            action === 'division' ||
+            action === 'multiplication'
+        ) {
+            const value1 = parseFloat(screen.textContent);
+            console.log(value1)
+
+        } else {
+            switch (action) {
+                case 'point':
+                    screen.textContent = screen.textContent + ",";
+                    break;
+                case 'del':
+                    screen.textContent = "0";
+                    break;
+                case 'reset':
+                    screen.textContent = "0";
+                    break;
+                case 'sum':
+                    screen.textContent = "0";
+                    break;
+                case 'subtraction':
+                    screen.textContent = "0";
+                    break;
+                case 'division':
+                    screen.textContent = "0";
+                    break;
+                case 'multiplication':
+                    screen.textContent = "0";
+                    break;
+                case 'equals':
+                    screen.textContent = "0";
+                    break;
             }
         }
     })
+    function operation() {
+
+    }
 })
