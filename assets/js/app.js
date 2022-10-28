@@ -3,12 +3,28 @@ const screen = document.querySelector('.screen-value');
 
 let pressed = false;
 let value1;
+let value2;
+let resultValue;
 let op;
+
+let themeToggler = document.getElementById("theme-toggler");
+themeToggler.addEventListener("click", () => {
+  let targetTheme;
+  let currentTheme = document.documentElement.getAttribute("data-theme");
+  if (currentTheme === "one") {
+    targetTheme = "two";
+  } else {
+    targetTheme = "three";
+  }
+  document.documentElement.setAttribute("data-theme", targetTheme);
+});
+
+
 selector.forEach(element => {
     element.addEventListener('click', (e) => {
         const buttonValue = e.target;
         const action = buttonValue.dataset.operation;
-        
+
         const result = (n1, n2, op) => {
             let res = '';
             switch (op) {
@@ -33,7 +49,7 @@ selector.forEach(element => {
             if (screen.textContent === '0' || pressed === true) {
                 screen.textContent = buttonValue.textContent;
                 pressed = false;
-            }else {
+            } else {
                 screen.textContent = screen.textContent + buttonValue.textContent;
             }
         } else if (
@@ -45,17 +61,21 @@ selector.forEach(element => {
             value1 = screen.textContent;
             op = action;
             pressed = true;
-        } else if (action === 'point') {
+        }
+        else if (action === 'point') {
+            if (!screen.textContent.includes('.')) {
                 screen.textContent = screen.textContent + '.';
+            }
         } else if (action === 'equals') {
             console.log(value1);
-            const value2 = screen.textContent;
+            value2 = screen.textContent;
             console.log(value2);
             console.log(op);
-            screen.textContent = result(value1, value2, op)
-        }else if (action === 'reset' || action === 'del') {
-            screen.textContent = '';
-            screen.textContent = '0';
+            resultValue = result(value1, value2, op);
+            console.log(resultValue)
+            screen.textContent = resultValue
+        } else if (action === 'reset' || action === 'del') {
+            window.location.reload(true);
         }
     })
 })
