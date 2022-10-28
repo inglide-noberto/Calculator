@@ -122,3 +122,12 @@ body{
     width: 100%;
     height: 8vh;
 }
+/* Responsive Desktop */
+@media screen and (min-width: 1024px) {
+    .header, .screen, .container{
+        display: flex;
+        justify-self: center;
+        width: 40%;
+        margin: 10px ;
+    }
+}
